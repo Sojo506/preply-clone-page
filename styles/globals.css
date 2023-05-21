@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.grid-profile {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: (2, minmax(0, 1fr));
+  gap: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-profile {
+    grid-template-columns: 35% 65%;
+    gap: unset;
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container::after {
+  content: "Country of birth: Japan";
+  position: absolute;
+  bottom: -20px; /* Ajusta la posición vertical del texto */
+  width: 250px;
+  left: -50px;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Estilos para el efecto de hover */
+.image-container:hover::after {
+  opacity: .8;
+}
