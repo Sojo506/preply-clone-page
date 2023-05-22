@@ -134,7 +134,7 @@ const Schedule = () => {
         </table>
       </div>
 
-      <button className="w-full mx-auto rounded-2xl px-2 py-3 bg-cyan-600 text-white text-sm font-bold">
+      <button className="w-full mx-auto rounded-2xl p-2 bg-[#3bb3bd] text-white text-sm font-bold">
         View full schedule
       </button>
     </section>
