@@ -55,7 +55,7 @@ const Schedule = () => {
     const fetchTimezones = async () => {
       try {
         const response = await fetch(
-          `http://api.timezonedb.com/v2.1/list-time-zone?key=${process.env.NEXT_PUBLIC_TIME_ZONE_KEY}&format=json`
+          `https://api.timezonedb.com/v2.1/list-time-zone?key=${process.env.NEXT_PUBLIC_TIME_ZONE_KEY}&format=json`
         ).then((res) => res.json());
 
         setTimezones(response.zones);
