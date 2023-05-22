@@ -14,17 +14,17 @@ const Schedule = () => {
   const generateCalendarDates = () => {
     const calendarDates = [];
     const startDate = currentDate.clone();
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
       calendarDates.push(startDate.clone().add(i, "days"));
     }
     return calendarDates;
   };
 
   const handleNextWeek = () => {
-    setCurrentDate((prevDate) => prevDate.clone().add(6, "days"));
+    setCurrentDate((prevDate) => prevDate.clone().add(7, "days"));
   };
   const handlePreviousWeek = () => {
-    const previousDate = currentDate.clone().subtract(6, "days");
+    const previousDate = currentDate.clone().subtract(7, "days");
     if (previousDate.isSameOrAfter(moment(), "day")) {
       setCurrentDate(previousDate);
     }
