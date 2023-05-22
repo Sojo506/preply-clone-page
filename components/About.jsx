@@ -12,15 +12,19 @@ const About = () => {
         <span className="text-cyan-500">Show original</span>
       </p>
       <p className="text-sm">
-        If you are a beginner don't worry. I will repeat and politely explain
-        what you do not understand (* ´꒳` *)
+        If you are a beginner don&apos;t worry. I will repeat and politely
+        explain what you do not understand (* ´꒳` *)
       </p>
       <br />
-      <p className="text-sm">Nice to meet you, I'm mine.</p>
+      <p className="text-sm">Nice to meet you, I&apos;m mine.</p>
       <br />
-      <p className="text-sm">I'm from Yokohama and speak standard Japanese.</p>
+      <p className="text-sm">
+        I&apos;m from Yokohama and speak standard Japanese.
+      </p>
       <br />
-      <p className="text-sm">I'm from Yokohama and speak standard Japanese.</p>
+      <p className="text-sm">
+        I&apos;m from Yokohama and speak standard Japanese.
+      </p>
 
       {show && (
         <>
@@ -33,8 +37,9 @@ const About = () => {
           </p>
           <br />
           <p className="text-sm">
-            I also enjoy learning foreign languages, French and Chinese when I'm
-            in high school, German when I'm in university, and now Spanish.)
+            I also enjoy learning foreign languages, French and Chinese when
+            I&apos;m in high school, German when I&apos;m in university, and now
+            Spanish.)
           </p>
           <br />
           <p className="text-sm">
