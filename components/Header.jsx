@@ -9,24 +9,24 @@ import Profile from "./Profile";
 const Header = () => {
   return (
     <header>
-      <div className="w-full flex items-center justify-between p-1 sm:p-2">
+      <div className="w-full flex items-center justify-between pt-5 pb-3 px-3 ">
         <div>
           <Image
             src="logo.svg"
-            width={120}
-            height={40}
+            width={130}
+            height={60}
             alt="preply logo"
             className="object-contain"
           />
         </div>
 
         <div className="flex gap-2 items-center">
-          <MdOutlineAccountBalanceWallet className="text-gray-500 text-xl sm:text-2xl cursor-pointer hover:text-gray-400" />
-          <FaRegCommentAlt className="text-gray-500 sm:text-xl cursor-pointer hover:text-gray-400" />
-          <AiOutlineQuestionCircle className="text-gray-500 text-xl sm:text-2xl cursor-pointer hover:text-gray-400 hidden md:flex" />
-          <AiOutlineHeart className="text-gray-500 text-xl sm:text-2xl cursor-pointer hover:text-gray-400" />
-          <IoMdNotificationsOutline className="text-gray-500 text-xl sm:text-2xl cursor-pointer hover:text-gray-400" />
-          <RxHamburgerMenu className="text-gray-500 text-xl sm:text-2xl md:hidden cursor-pointer hover:text-gray-400" />
+          <MdOutlineAccountBalanceWallet className="text-gray-500 text-2xl cursor-pointer hover:text-gray-400" />
+          <FaRegCommentAlt className="text-gray-500 cursor-pointer hover:text-gray-400" />
+          <AiOutlineQuestionCircle className="text-gray-500 text-2xl cursor-pointer hover:text-gray-400 hidden md:flex" />
+          <AiOutlineHeart className="text-gray-500 text-2xl cursor-pointer hover:text-gray-400" />
+          <IoMdNotificationsOutline className="text-gray-500 text-2xl cursor-pointer hover:text-gray-400" />
+          <RxHamburgerMenu className="text-gray-500 text-2xl md:hidden cursor-pointer hover:text-gray-400" />
         </div>
       </div>
 

@@ -5,7 +5,7 @@ const About = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="rounded-md bg-white p-3 shadow-md">
+    <section className="rounded-md bg-white p-3 shadow-md">
       <h3 className="font-bold">About the tutor</h3>
       <p className="text-gray-500 text-sm mt-4 mb-3">
         Powered by Google Translate{" "}
@@ -90,7 +90,7 @@ const About = () => {
       >
         {show ? "Hide" : "Show more"}
       </button>
-    </div>
+    </section>
   );
 };
 
