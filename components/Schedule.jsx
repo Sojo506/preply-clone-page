@@ -52,15 +52,13 @@ const Schedule = () => {
 
   useEffect(() => {
     /* THIS IS TO GET THE TIME ZONES */
-    const fetchTimezones = () => {
+    const fetchTimezones = async () => {
       try {
-        fetch(
+        const response = await fetch(
           `http://api.timezonedb.com/v2.1/list-time-zone?key=${process.env.NEXT_PUBLIC_TIME_ZONE_KEY}&format=json`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            setTimezones(data.zones);
-          });
+        ).then((res) => res.json());
+
+        setTimezones(response.zones);
       } catch (error) {
         console.error("error", error);
       }
