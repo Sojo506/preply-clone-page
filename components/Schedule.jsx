@@ -67,8 +67,8 @@ const Schedule = () => {
     fetchTimezones();
   }, []);
   return (
-    <section className="rounded-md bg-white p-3 shadow-md mt-5 mb-5">
-      <h3 className="font-bold">Schedule</h3>
+    <section className="rounded-md bg-white px-3 py-4 shadow-md mt-5 w-full max-w-[720px]">
+      <h2 className="font-bold">Schedule</h2>
 
       <div className="flex p-3 justify-center items-start bg-gray-100 rounded mt-7">
         <AiOutlineQuestionCircle className="text-gray-500 text-base basis-[30%]" />
@@ -106,7 +106,7 @@ const Schedule = () => {
           </select>
         </div>
 
-        <table className="w-full mt-3">
+        <table className="w-full mt-3 mb-4">
           <tbody className="flex justify-between">
             {calendarDates.map((date) => (
               <tr
@@ -133,6 +133,10 @@ const Schedule = () => {
           </tbody>
         </table>
       </div>
+
+      <button className="w-full mx-auto rounded-2xl px-2 py-3 bg-cyan-600 text-white text-sm font-bold">
+        View full schedule
+      </button>
     </section>
   );
 };

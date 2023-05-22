@@ -6,7 +6,7 @@ import { MdVerifiedUser } from "react-icons/md";
 
 const Profile = () => {
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center mt-4 w-full max-w-[720px]">
       <div className="w-full md:w-auto grid-profile p-1">
         <picture className="md:row-start-1 md:row-end-3">
           <source

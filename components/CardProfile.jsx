@@ -2,7 +2,7 @@ import { AiOutlineMail, AiOutlineHeart } from "react-icons/ai";
 
 const CardProfile = () => {
   return (
-    <div className="flex flex-col gap-2 translate-y-7">
+    <div className="w-full max-w-[720px] flex flex-col gap-2 translate-y-7 mx-auto">
       <button className="w-[90%] mx-auto flex items-center justify-center gap-2 p-2 border border-cyan-500 rounded-xl text-cyan-500 font-medium">
         <AiOutlineMail />
         Send message

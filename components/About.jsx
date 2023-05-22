@@ -5,8 +5,8 @@ const About = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <section className="rounded-md bg-white p-3 shadow-md">
-      <h3 className="font-bold">About the tutor</h3>
+    <section className="rounded-md bg-white px-3 py-4 shadow-md w-full max-w-[720px]">
+      <h2 className="font-bold">About the tutor</h2>
       <p className="text-gray-500 text-sm mt-4 mb-3">
         Powered by Google Translate{" "}
         <span className="text-cyan-500">Show original</span>
@@ -21,8 +21,6 @@ const About = () => {
       <p className="text-sm">
         I&apos;m from Yokohama and speak standard Japanese.
       </p>
-      <br />
-
       {show && (
         <>
           <p className="text-sm">
@@ -78,9 +76,8 @@ const About = () => {
         </>
       )}
 
-      <br />
       <button
-        className="text-cyan-500 text-sm"
+        className="text-cyan-500 text-sm mt-5"
         onClick={() => {
           setShow((prev) => !prev);
         }}
