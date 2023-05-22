@@ -36,5 +36,16 @@
 
 /* Estilos para el efecto de hover */
 .image-container:hover::after {
-  opacity: .8;
+  opacity: 0.8;
+}
+
+.btn_subjects::after {
+  content: "";
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0), #fff 40%);
+  bottom: 30px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
