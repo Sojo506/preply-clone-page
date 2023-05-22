@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Resume from "@/components/Resume";
 import Schedule from "@/components/Schedule";
 import Students from "@/components/Students";
+import Subjects from "@/components/Subjects";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Schedule />
         <Students />
         <Resume />
+        <Subjects />
       </main>
     </>
   );
