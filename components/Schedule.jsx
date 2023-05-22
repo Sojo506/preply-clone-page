@@ -86,7 +86,11 @@ const Schedule = () => {
           >
             <AiOutlineArrowLeft className="group-hover:text-cyan-400" />
           </div>
-          <h2>{currentDate.format("MMMM Do, YYYY")}</h2>
+          <h2 className="text-sm">
+            {currentDate.format("MMMM D")}-
+            {currentDate.clone().add(6, "days").format("D")},{" "}
+            {currentDate.format("YYYY")}
+          </h2>
           <div
             onClick={handleNextWeek}
             className="p-3 border cursor-pointer group"
@@ -96,7 +100,7 @@ const Schedule = () => {
         </div>
 
         <div className="w-full max-w-xs mt-4 border p-1 mx-auto">
-          <select className="w-full outline-none text-center">
+          <select className="w-full outline-none text-sm text-center">
             {timezones &&
               timezones?.map((timezone) => (
                 <option key={timezone.zoneName} value={timezone.zoneName}>
