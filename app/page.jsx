@@ -5,6 +5,7 @@ import Resume from "@/components/Resume";
 import Schedule from "@/components/Schedule";
 import Students from "@/components/Students";
 import Subjects from "@/components/Subjects";
+import YouMightLike from "@/components/YouMightLike";
 import Image from "next/image";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Students />
         <Resume />
         <Subjects />
+        <YouMightLike />
       </main>
     </>
   );
