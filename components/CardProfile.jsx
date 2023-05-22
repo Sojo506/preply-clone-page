@@ -13,8 +13,8 @@ const CardProfile = () => {
       </button>
       <iframe
         src="https://player.vimeo.com/video/651454592"
-        frameborder="0"
-        allowfullscreen
+        frameBorder="0"
+        allowFullScreen
         className="h-40"
       ></iframe>
     </div>
