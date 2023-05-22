@@ -22,9 +22,6 @@ const About = () => {
         I&apos;m from Yokohama and speak standard Japanese.
       </p>
       <br />
-      <p className="text-sm">
-        I&apos;m from Yokohama and speak standard Japanese.
-      </p>
 
       {show && (
         <>

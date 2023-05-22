@@ -1,7 +1,7 @@
 "use client";
 import moment from "moment";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AiOutlineQuestionCircle,
   AiOutlineArrowLeft,
@@ -10,7 +10,17 @@ import {
 
 const Schedule = () => {
   const [currentDate, setCurrentDate] = useState(moment());
+  const [timezones, setTimezones] = useState([]);
+  const formatGmtOffset = (offset) => {
+    const hours = Math.floor(offset / 3600);
+    const minutes = Math.floor((offset % 3600) / 60);
+    const sign = offset >= 0 ? "+" : "-";
+    return `GMT ${sign}${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}`;
+  };
 
+  /* THIS IS TO HANDLE THE DATES OF THE CALENDAR */
   const generateCalendarDates = () => {
     const calendarDates = [];
     const startDate = currentDate.clone();
@@ -19,7 +29,6 @@ const Schedule = () => {
     }
     return calendarDates;
   };
-
   const handleNextWeek = () => {
     setCurrentDate((prevDate) => prevDate.clone().add(7, "days"));
   };
@@ -29,11 +38,38 @@ const Schedule = () => {
       setCurrentDate(previousDate);
     }
   };
-
   const calendarDates = generateCalendarDates();
+  /* END HERE */
 
+  const schedule = [
+    { hour: "8:00", type: "AM" },
+    { hour: "9:00", type: "AM" },
+    { hour: "10:00", type: "AM" },
+    { hour: "1:00", type: "PM" },
+    { hour: "2:00", type: "PM" },
+    { hour: "3:00", type: "PM" },
+  ];
+
+  useEffect(() => {
+    /* THIS IS TO GET THE TIME ZONES */
+    const fetchTimezones = () => {
+      try {
+        fetch(
+          `http://api.timezonedb.com/v2.1/list-time-zone?key=${process.env.NEXT_PUBLIC_TIME_ZONE_KEY}&format=json`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setTimezones(data.zones);
+          });
+      } catch (error) {
+        console.error("error", error);
+      }
+    };
+
+    fetchTimezones();
+  }, []);
   return (
-    <section className="rounded-md bg-white p-3 shadow-md">
+    <section className="rounded-md bg-white p-3 shadow-md mt-5 mb-5">
       <h3 className="font-bold">Schedule</h3>
 
       <div className="flex p-3 justify-center items-start bg-gray-100 rounded mt-7">
@@ -60,6 +96,18 @@ const Schedule = () => {
             <AiOutlineArrowRight className="group-hover:text-cyan-400" />
           </div>
         </div>
+
+        <div className="w-full max-w-xs mt-4 border p-1">
+          <select className="w-full outline-none text-center">
+            {timezones &&
+              timezones?.map((timezone) => (
+                <option key={timezone.zoneName} value={timezone.zoneName}>
+                  {timezone.zoneName} {formatGmtOffset(timezone.gmtOffset)}
+                </option>
+              ))}
+          </select>
+        </div>
+
         <ul className="flex justify-between mt-3">
           {calendarDates.map((date) => (
             <li
@@ -68,6 +116,18 @@ const Schedule = () => {
             >
               <p>{date.format("dddd").slice(0, 3)}</p>
               <p>{date.format("D")}</p>
+
+              <div className="flex flex-col text-center items-center mt-4 gap-2">
+                {schedule.map((sch) => (
+                  <p
+                    key={sch.hour}
+                    className="text-cyan-500 text-xs"
+                    onClick={() => alert("Booked it")}
+                  >
+                    {sch.hour}
+                  </p>
+                ))}
+              </div>
             </li>
           ))}
         </ul>
