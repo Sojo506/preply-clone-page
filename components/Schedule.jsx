@@ -106,29 +106,32 @@ const Schedule = () => {
           </select>
         </div>
 
-        <ul className="flex justify-between mt-3">
-          {calendarDates.map((date) => (
-            <li
-              key={date.format("YYYY-MM-DD")}
-              className="flex flex-col items-center"
-            >
-              <p>{date.format("dddd").slice(0, 3)}</p>
-              <p>{date.format("D")}</p>
-
-              <div className="flex flex-col text-center items-center mt-4 gap-2">
-                {schedule.map((sch) => (
-                  <p
-                    key={sch.hour}
-                    className="text-cyan-500 text-xs"
-                    onClick={() => alert("Booked it")}
-                  >
-                    {sch.hour}
-                  </p>
-                ))}
-              </div>
-            </li>
-          ))}
-        </ul>
+        <table className="w-full mt-3">
+          <tbody className="flex justify-between">
+            {calendarDates.map((date) => (
+              <tr
+                key={date.format("YYYY-MM-DD")}
+                className="border-cyan-600 border-t-4"
+              >
+                <td className="flex flex-col items-center">
+                  <p>{date.format("dddd").slice(0, 3)}</p>
+                  <p>{date.format("D")}</p>
+                </td>
+                <td className="flex flex-col text-center items-center mt-4 gap-2">
+                  {schedule.map((sch) => (
+                    <p
+                      key={sch.hour}
+                      className="text-cyan-500 text-xs"
+                      onClick={() => alert("Booked it")}
+                    >
+                      {sch.hour}
+                    </p>
+                  ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );
