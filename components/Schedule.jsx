@@ -95,7 +95,7 @@ const Schedule = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-xs mt-4 border p-1">
+        <div className="w-full max-w-xs mt-4 border p-1 mx-auto">
           <select className="w-full outline-none text-center">
             {timezones &&
               timezones?.map((timezone) => (
