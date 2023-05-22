@@ -18,14 +18,14 @@ const data = [
     img: "https://randomuser.me/api/portraits/men/3.jpg",
     dateOfPublished: "November 24, 2021",
     comment: "The teacher is very kind and attentive, I highly recommend her.",
-    rate: 5.5,
+    rate: 5,
   },
   {
     name: "Sarah",
     img: "https://randomuser.me/api/portraits/women/4.jpg",
     dateOfPublished: "November 25, 2021",
     comment: "The teacher has extensive knowledge and explains things clearly.",
-    rate: 5.5,
+    rate: 5,
   },
   {
     name: "Michael",
